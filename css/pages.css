@@ -1,0 +1,414 @@
+/*
+ * pages.css
+ * ─────────────────────────────────────────────────────────────
+ * Styles specific to each page: Overview, Transactions, Insights.
+ * Anything that only appears on one page goes here.
+ */
+
+/* ════════════════════════════════════════════════
+   OVERVIEW PAGE
+════════════════════════════════════════════════ */
+
+/* ── Summary cards row ──────────────────────────────────────── */
+.summary-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.sum-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: box-shadow 0.2s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.sum-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-1px);
+}
+
+/* Coloured bottom accent line */
+.sum-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.sum-card.s-balance::after { background: linear-gradient(90deg, var(--accent), #60a5fa); }
+.sum-card.s-income::after  { background: linear-gradient(90deg, var(--green),  #34d399); }
+.sum-card.s-expense::after { background: linear-gradient(90deg, var(--red),    #f87171); }
+
+.sum-meta { flex: 1; }
+
+.sum-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 8px;
+}
+
+.sum-value {
+  font-family: var(--mono);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.sum-value.c-blue  { color: var(--accent); }
+.sum-value.c-green { color: var(--green);  }
+.sum-value.c-red   { color: var(--red);    }
+
+.sum-sub {
+  font-size: 11px;
+  color: var(--text3);
+}
+
+.sum-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-left: 12px;
+}
+
+.sum-icon svg { width: 18px; height: 18px; }
+
+.sum-icon.i-blue   { background: var(--accent-lt); color: var(--accent); }
+.sum-icon.i-green  { background: var(--green-lt);  color: var(--green);  }
+.sum-icon.i-red    { background: var(--red-lt);    color: var(--red);    }
+
+/* ── Charts row ─────────────────────────────────────────────── */
+.charts-row {
+  display: grid;
+  grid-template-columns: 1fr 380px;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.chart-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+
+/* SVG chart container */
+.chart-svg-wrap {
+  width: 100%;
+  overflow: visible;
+  position: relative;
+}
+
+.chart-svg-wrap svg {
+  width: 100%;
+  overflow: visible;
+}
+
+/* Legend below the area chart */
+.chart-legend {
+  display: flex;
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.leg-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--text3);
+  font-family: var(--mono);
+}
+
+.leg-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+/* Donut chart */
+.donut-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.donut-center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.donut-legend-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 4px;
+}
+
+.donut-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.donut-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  color: var(--text2);
+}
+
+.donut-swatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.donut-pct {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text3);
+}
+
+/* ── Insights strip (4 cards) ───────────────────────────────── */
+.insights-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.insight-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  transition: box-shadow 0.2s;
+}
+
+.insight-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.insight-ico {
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.insight-ico svg { width: 17px; height: 17px; }
+
+.ic-amber  { background: var(--amber-lt);  color: var(--amber);  }
+.ic-green  { background: var(--green-lt);  color: var(--green);  }
+.ic-red    { background: var(--red-lt);    color: var(--red);    }
+.ic-purple { background: var(--purple-lt); color: var(--purple); }
+.ic-teal   { background: var(--teal-lt);   color: var(--teal);   }
+
+.insight-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+}
+
+.insight-value {
+  font-family: var(--mono);
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 2px;
+}
+
+.insight-desc {
+  font-size: 11px;
+  color: var(--text3);
+  line-height: 1.4;
+}
+
+/* ════════════════════════════════════════════════
+   TRANSACTIONS PAGE
+════════════════════════════════════════════════ */
+.txn-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.txn-toolbar {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.txn-filters {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+/* Search box with icon inside */
+.search-box {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+}
+
+.search-box svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  color: var(--text3);
+  pointer-events: none;
+}
+
+.search-input {
+  width: 100%;
+  padding: 7px 10px 7px 32px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface2);
+  color: var(--text);
+  font-size: 12.5px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+
+.search-input:focus {
+  border-color: var(--accent);
+}
+
+.filter-select {
+  padding: 7px 26px 7px 10px;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--surface2);
+  color: var(--text);
+  font-size: 12.5px;
+  outline: none;
+  cursor: pointer;
+  min-width: 110px;
+  /* Custom arrow */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239ca3af' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  appearance: none;
+  transition: border-color 0.15s;
+}
+
+.filter-select:focus {
+  border-color: var(--accent);
+}
+
+/* ════════════════════════════════════════════════
+   INSIGHTS PAGE
+════════════════════════════════════════════════ */
+
+/* Category bar chart rows */
+.cat-bar-row {
+  margin-bottom: 14px;
+}
+
+.cat-bar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  font-size: 12.5px;
+}
+
+.cat-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--text2);
+}
+
+.cat-bar-swatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.cat-bar-val {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text3);
+}
+
+.cat-bar-track {
+  height: 6px;
+  background: var(--surface2);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.cat-bar-fill {
+  height: 100%;
+  border-radius: 99px;
+  transition: width 0.5s ease;
+}
+
+/* ── Responsive adjustments ─────────────────────────────────── */
+@media (max-width: 1100px) {
+  .insights-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .charts-row {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .summary-row {
+    grid-template-columns: 1fr;
+  }
+
+  .insights-row {
+    grid-template-columns: 1fr;
+  }
+}

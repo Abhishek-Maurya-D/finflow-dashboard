@@ -1,0 +1,95 @@
+/*
+ * tokens.css
+ * ─────────────────────────────────────────────────────────────
+ * All design tokens live here as CSS custom properties.
+ * Every other stylesheet references these variables — never
+ * hardcoded values — so switching themes is trivially easy.
+ *
+ * Light mode is the default (applied to :root).
+ * Dark mode is toggled by adding class="dark" to <body>.
+ */
+
+/* ── Light Mode (default) ────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg:         #f7f8fc;
+  --surface:    #ffffff;
+  --surface2:   #f1f3f9;
+
+  /* Borders */
+  --border:     #e4e7f0;
+  --border2:    #d0d5e8;
+
+  /* Text */
+  --text:       #111827;
+  --text2:      #4b5563;
+  --text3:      #9ca3af;
+
+  /* Brand / Accent */
+  --accent:     #2563eb;
+  --accent-lt:  #eff4ff;
+  --accent-dk:  #1d4ed8;
+
+  /* Semantic colours */
+  --green:      #059669;
+  --green-lt:   #ecfdf5;
+
+  --red:        #dc2626;
+  --red-lt:     #fef2f2;
+
+  --amber:      #d97706;
+  --amber-lt:   #fffbeb;
+
+  --purple:     #7c3aed;
+  --purple-lt:  #f5f3ff;
+
+  --teal:       #0891b2;
+  --teal-lt:    #ecfeff;
+
+  /* Typography */
+  --mono:  'DM Mono', 'Courier New', monospace;
+  --sans:  'DM Sans', system-ui, sans-serif;
+
+  /* Shape */
+  --radius: 12px;
+
+  /* Shadows */
+  --shadow:    0 1px 3px rgba(0, 0, 0, 0.07), 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.10), 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Dark Mode ───────────────────────────────────────────────── */
+body.dark {
+  --bg:         #0d1117;
+  --surface:    #161b22;
+  --surface2:   #1c2333;
+
+  --border:     #30363d;
+  --border2:    #3d444d;
+
+  --text:       #e6edf3;
+  --text2:      #8b949e;
+  --text3:      #484f58;
+
+  --accent:     #4493f8;
+  --accent-lt:  #0d2a4a;
+  --accent-dk:  #6aa9fa;
+
+  --green:      #3fb950;
+  --green-lt:   #0a2a1a;
+
+  --red:        #f85149;
+  --red-lt:     #2a0d0d;
+
+  --amber:      #e3b341;
+  --amber-lt:   #2a1f0a;
+
+  --purple:     #a371f7;
+  --purple-lt:  #1a0d3a;
+
+  --teal:       #39c5cf;
+  --teal-lt:    #0a2a2e;
+
+  --shadow:    0 1px 3px rgba(0, 0, 0, 0.30), 0 4px 12px rgba(0, 0, 0, 0.20);
+  --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.40), 0 8px 32px rgba(0, 0, 0, 0.25);
+}

@@ -1,0 +1,69 @@
+/*
+ * base.css
+ * ─────────────────────────────────────────────────────────────
+ * CSS reset and raw element styles.
+ * No class-specific rules here — just tag-level defaults.
+ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 14px;
+  /* Prevent flash of unstyled content on font load */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  line-height: 1.5;
+  /* Smooth theme transition */
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Form elements inherit the app font */
+input,
+select,
+button,
+textarea {
+  font-family: var(--sans);
+}
+
+/* Kill default button appearance */
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* Kill default select arrow so we can add our own via CSS */
+select {
+  appearance: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Custom scrollbar — subtle, theme-aware */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border2);
+  border-radius: 99px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text3);
+}
