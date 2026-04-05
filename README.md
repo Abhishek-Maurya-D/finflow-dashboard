@@ -2,6 +2,8 @@
 
 A clean, responsive finance dashboard for tracking income, expenses and spending patterns. Built with vanilla HTML, CSS and JavaScript — no build tools, no package manager, no dependencies.
 
+**🔗 Live Demo → [https://abhishek-maurya-d.github.io/finflow-dashboard/](https://abhishek-maurya-d.github.io/finflow-dashboard/)**
+
 ---
 
 ## Quick Start
